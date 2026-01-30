@@ -26,7 +26,7 @@
       position: fixed;
       top: 0;
       width: 100%;
-      padding: 20px 60px;
+      padding: 18px 60px;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -42,46 +42,48 @@
     }
 
     nav a {
-      margin-left: 30px;
+      margin-left: 28px;
       font-weight: 500;
     }
 
-    /* SECTIONS */
+    /* SECTIONS (GLOBAL) */
     section {
-      padding: 90px 80px;
+      padding: 60px 80px;
       max-width: 1100px;
       margin: auto;
     }
 
     h2 {
-      font-size: 30px;
-      margin-bottom: 15px;
+      font-size: 28px;
+      margin-bottom: 12px;
       border-bottom: 3px solid #dceefb;
       display: inline-block;
     }
 
     h3 {
       font-size: 22px;
-      margin-top: 30px;
-      margin-bottom: 15px;
+      margin-top: 25px;
+      margin-bottom: 12px;
       color: #243b53;
     }
 
     p {
       font-size: 18px;
-      line-height: 1.7;
-      max-width: 800px;
+      line-height: 1.6;
+      max-width: 820px;
+      margin-top: 12px;
     }
 
     /* HERO */
     .hero {
-      min-height: 70vh;
+      min-height: 55vh;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       text-align: center;
       padding-top: 120px;
+      padding-bottom: 30px;
     }
 
     .hero h1 {
@@ -94,20 +96,30 @@
     .hero p {
       font-size: 20px;
       color: #334e68;
+      margin-top: 0;
+    }
+
+    /* ABOUT + PROFESSIONAL PULL-UP */
+    #about {
+      padding-top: 30px;
+    }
+
+    #professional {
+      padding-top: 40px;
     }
 
     /* CARDS */
     .cards {
       display: flex;
-      gap: 25px;
+      gap: 22px;
       flex-wrap: wrap;
-      margin-top: 15px;
+      margin-top: 14px;
     }
 
     .card {
       flex: 1;
       min-width: 260px;
-      padding: 35px;
+      padding: 30px;
       background: white;
       border-radius: 18px;
       box-shadow: 0 10px 25px rgba(0,0,0,0.08);
@@ -125,19 +137,19 @@
     }
 
     .card:hover {
-      transform: translateY(-8px);
+      transform: translateY(-6px);
     }
 
     /* INTEREST TAGS */
     .tags {
       display: flex;
-      gap: 15px;
+      gap: 14px;
       flex-wrap: wrap;
-      margin-top: 25px;
+      margin-top: 16px;
     }
 
     .tag {
-      padding: 12px 20px;
+      padding: 10px 18px;
       background: white;
       border-radius: 20px;
       font-weight: 500;
@@ -147,7 +159,7 @@
     /* FOOTER */
     footer {
       text-align: center;
-      padding: 50px;
+      padding: 40px;
       font-size: 14px;
       color: #627d98;
     }
@@ -155,8 +167,8 @@
     /* ANIMATIONS */
     .fade {
       opacity: 0;
-      transform: translateY(30px);
-      transition: all 0.9s ease;
+      transform: translateY(25px);
+      transition: all 0.8s ease;
     }
 
     .fade.show {
@@ -188,88 +200,4 @@
   <section id="about" class="fade">
     <h2>About Me</h2>
     <p>
-      I am a Babson College student with interests in sales, marketing, and finance, supported
-      by experience across consulting, operations, and investment analysis. As a first-generation
-      college student, I bring a strong sense of responsibility, leadership, and adaptability to
-      every environment I work in.
-    </p>
-  </section>
-
-  <!-- PROFESSIONAL -->
-  <section id="professional" class="fade">
-    <h2>Professional</h2>
-
-    <!-- Resume & LinkedIn -->
-    <div class="cards">
-      <a href="Julissa_Morales_Resume.pdf" target="_blank" class="card">
-        View Resume (PDF)
-        <span>Professional experience & education</span>
-      </a>
-
-      <a href="https://www.linkedin.com/in/julissamorales" target="_blank" class="card">
-        LinkedIn Profile ↗
-        <span>Career updates & connections</span>
-      </a>
-    </div>
-
-    <!-- Articles & Media -->
-    <h3>Featured Articles & Media</h3>
-
-    <div class="cards">
-      <a href="https://annualreport.squashbusters.org/profile/natalie-and-julissa/" 
-         target="_blank" class="card">
-        SquashBusters Annual Report
-        <span>SquashBuster Family Feature</span>
-      </a>
-
-      <a href="https://www.nbcboston.com/video/entertainment/hub-today/celebrating-75-years-of-junior-achievement/3811369/" 
-         target="_blank" class="card">
-        NBC Boston – Junior Achievement
-        <span>Celebrating 75 Years of Junior Achievement</span>
-      </a>
-
-      <a href="https://www.youtube.com/watch?v=y22Qj8P0-SE" 
-         target="_blank" class="card">
-        Telemundo - Junior Achievement
-        <span>Celebrando los 75 años de Junior Achievement</span>
-      </a>
-    </div>
-  </section>
-
-  <!-- INTERESTS -->
-  <section id="interests" class="fade">
-    <h2>Interests</h2>
-    <div class="tags">
-      <div class="tag">Squash</div>
-      <div class="tag">Coding</div>
-            
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer>
-    © 2026 Julissa Morales · Babson College
-  </footer>
-
-  <!-- SCROLL ANIMATION SCRIPT -->
-  <script>
-    const faders = document.querySelectorAll(".fade");
-
-    const appearOnScroll = new IntersectionObserver(
-      entries => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("show");
-          }
-        });
-      },
-      { threshold: 0.2 }
-    );
-
-    faders.forEach(fade => {
-      appearOnScroll.observe(fade);
-    });
-  </script>
-
-</body>
-</html>
+      work on this....
