@@ -8,114 +8,128 @@
     body {
       margin: 0;
       height: 100vh;
-      background-color: #e6f2f8;
+      background: linear-gradient(135deg, #e6f2f8, #f9fcff);
       display: flex;
       justify-content: center;
       align-items: center;
-      font-family: Arial, sans-serif;
-      color: #1a3d5c;
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      color: #102a43;
     }
 
     .center {
       text-align: center;
-      max-width: 800px;
-    }
-
-    .line {
-      display: none;
-      margin-bottom: 10px;
-    }
-
-    .hi {
-      font-size: 28px;
-      font-family: Georgia, serif;
-    }
-
-    .welcome {
-      font-size: 34px;
-      font-family: Georgia, serif;
+      max-width: 850px;
     }
 
     .name {
-      font-size: 48px;
-      font-family: "Times New Roman", serif;
-      color: darkblue;
-      font-weight: bold;
-      margin-top: 15px;
+      font-size: 52px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      margin-bottom: 10px;
     }
 
-    .subtitle {
-      font-size: 16px;
-      color: #555;
-      margin-top: 15px;
+    .tagline {
+      font-size: 18px;
+      font-weight: 400;
+      color: #334e68;
+      margin-bottom: 35px;
     }
 
     .bubbles {
-      margin-top: 45px;
-      display: none;
+      margin-top: 40px;
     }
 
-    .bubble {
-      display: inline-block;
-      width: 150px;
-      height: 150px;
+    .bubble,
+    .dropdown-btn {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      width: 145px;
+      height: 145px;
       margin: 15px;
-      background-color: white;
+      background-color: #ffffff;
       border-radius: 50%;
-      line-height: 150px;
-      font-size: 16px;
-      font-weight: bold;
-      color: #1a3d5c;
+      font-size: 15px;
+      font-weight: 600;
+      color: #102a43;
       text-decoration: none;
-      box-shadow: 0 8px 18px rgba(0,0,0,0.15);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.12);
       transition: transform 0.3s ease, background-color 0.3s ease;
+      cursor: pointer;
     }
 
-    .bubble:hover {
-      transform: scale(1.08);
-      background-color: #d9ecf7;
+    .bubble:hover,
+    .dropdown-btn:hover {
+      transform: scale(1.07);
+      background-color: #dceefb;
     }
+
+    /* Dropdown */
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      top: 165px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: #ffffff;
+      min-width: 180px;
+      border-radius: 12px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+      z-index: 1;
+      padding: 10px 0;
+    }
+
+    .dropdown-content a {
+      display: block;
+      padding: 12px 20px;
+      text-decoration: none;
+      color: #102a43;
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #f1f5f9;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
   </style>
 </head>
 
 <body>
 
   <div class="center">
-    <div id="hi" class="line hi">Hi!</div>
-    <div id="welcome" class="line welcome">Welcome to My Page!</div>
-    <div id="name" class="line name">My name is Julissa Morales.</div>
-    <div id="subtitle" class="line subtitle">
-      Feel free to click around to learn more about me.
+    <div class="name">Julissa Morales</div>
+    <div class="tagline">
+      First-Generation College Student & Diversity Leadership Scholar at Babson College
     </div>
 
-    <div id="bubbles" class="bubbles">
-      <a href="#about" class="bubble">About Me</a>
-      <a href="#resume" class="bubble">Resume</a>
+    <div class="bubbles">
+      <a href="#about" class="bubble">About</a>
+
+      <div class="dropdown">
+        <div class="dropdown-btn">Professional</div>
+        <div class="dropdown-content">
+          <a href="Julissa_Morales_Resume.pdf" target="_blank" rel="noopener noreferrer">
+            Resume (PDF)
+          </a>
+          <a href="https://www.linkedin.com/in/julissamorales" target="_blank" rel="noopener noreferrer">
+            LinkedIn ↗
+          </a>
+        </div>
+      </div>
+
       <a href="#interests" class="bubble">Interests</a>
     </div>
   </div>
-
-  <script>
-    setTimeout(() => {
-      document.getElementById("hi").style.display = "block";
-    }, 500);
-
-    setTimeout(() => {
-      document.getElementById("welcome").style.display = "block";
-    }, 2000);
-
-    setTimeout(() => {
-      document.getElementById("name").style.display = "block";
-    }, 4000);
-
-    setTimeout(() => {
-      document.getElementById("subtitle").style.display = "block";
-    }, 5500);
-
-    setTimeout(() => {
-      document.getElementById("bubbles").style.display = "block";
-    }, 7000);
-  </script>
 
 </body>
 </html>
