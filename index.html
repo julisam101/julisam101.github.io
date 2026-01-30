@@ -5,131 +5,231 @@
   <title>Julissa Morales</title>
 
   <style>
+    /* GLOBAL STYLES */
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       margin: 0;
-      height: 100vh;
-      background: linear-gradient(135deg, #e6f2f8, #f9fcff);
-      display: flex;
-      justify-content: center;
-      align-items: center;
       font-family: "Helvetica Neue", Arial, sans-serif;
       color: #102a43;
+      background: linear-gradient(135deg, #e6f2f8, #f9fcff);
     }
 
-    .center {
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* HEADER */
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      padding: 20px 60px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(255,255,255,0.9);
+      backdrop-filter: blur(8px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      z-index: 1000;
+    }
+
+    .logo {
+      font-weight: 700;
+      letter-spacing: 2px;
+    }
+
+    nav a {
+      margin-left: 30px;
+      font-weight: 500;
+    }
+
+    /* SECTIONS */
+    section {
+      padding: 120px 80px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    h2 {
+      font-size: 30px;
+      margin-bottom: 25px;
+      border-bottom: 3px solid #dceefb;
+      display: inline-block;
+    }
+
+    p {
+      font-size: 18px;
+      line-height: 1.7;
+      max-width: 800px;
+    }
+
+    /* HERO */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
       text-align: center;
-      max-width: 850px;
+      padding-top: 140px;
     }
 
-    .name {
-      font-size: 52px;
+    .hero h1 {
+      font-size: 56px;
       font-weight: 600;
       letter-spacing: 1px;
       margin-bottom: 10px;
     }
 
-    .tagline {
-      font-size: 18px;
-      font-weight: 400;
+    .hero p {
+      font-size: 20px;
       color: #334e68;
-      margin-bottom: 35px;
     }
 
-    .bubbles {
+    /* CARDS */
+    .cards {
+      display: flex;
+      gap: 30px;
+      flex-wrap: wrap;
       margin-top: 40px;
     }
 
-    .bubble,
-    .dropdown-btn {
-      display: inline-flex;
-      justify-content: center;
-      align-items: center;
-      width: 145px;
-      height: 145px;
-      margin: 15px;
-      background-color: #ffffff;
-      border-radius: 50%;
-      font-size: 15px;
+    .card {
+      flex: 1;
+      min-width: 250px;
+      padding: 35px;
+      background: white;
+      border-radius: 18px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+      transition: transform 0.3s ease;
       font-weight: 600;
-      color: #102a43;
-      text-decoration: none;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.12);
-      transition: transform 0.3s ease, background-color 0.3s ease;
-      cursor: pointer;
+      text-align: center;
     }
 
-    .bubble:hover,
-    .dropdown-btn:hover {
-      transform: scale(1.07);
-      background-color: #dceefb;
+    .card:hover {
+      transform: translateY(-8px);
     }
 
-    /* Dropdown */
-    .dropdown {
-      position: relative;
-      display: inline-block;
+    /* INTEREST TAGS */
+    .tags {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+      margin-top: 25px;
     }
 
-    .dropdown-content {
-      display: none;
-      position: absolute;
-      top: 165px;
-      left: 50%;
-      transform: translateX(-50%);
-      background-color: #ffffff;
-      min-width: 180px;
-      border-radius: 12px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-      z-index: 1;
-      padding: 10px 0;
-    }
-
-    .dropdown-content a {
-      display: block;
+    .tag {
       padding: 12px 20px;
-      text-decoration: none;
-      color: #102a43;
-      font-size: 14px;
+      background: white;
+      border-radius: 20px;
       font-weight: 500;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.08);
     }
 
-    .dropdown-content a:hover {
-      background-color: #f1f5f9;
+    /* FOOTER */
+    footer {
+      text-align: center;
+      padding: 50px;
+      font-size: 14px;
+      color: #627d98;
     }
 
-    .dropdown:hover .dropdown-content {
-      display: block;
+    /* ANIMATIONS */
+    .fade {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.9s ease;
     }
 
+    .fade.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
   </style>
 </head>
 
 <body>
 
-  <div class="center">
-    <div class="name">Julissa Morales</div>
-    <div class="tagline">
-      First-Generation College Student & Diversity Leadership Scholar at Babson College
+  <!-- HEADER -->
+  <header>
+    <div class="logo">JM</div>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#professional">Professional</a>
+      <a href="#interests">Interests</a>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero fade">
+    <h1>Julissa Morales</h1>
+    <p>First-Generation College Student & Diversity Leadership Scholar at Babson College</p>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="fade">
+    <h2>About Me</h2>
+    <p>
+      I am a Babson College student with interests in sales, marketing, and finance, supported
+      by experience across consulting, operations, and investment analysis. As a first-generation
+      college student, I bring a strong sense of responsibility, adaptability, and leadership to
+      every environment I work in.
+    </p>
+  </section>
+
+  <!-- PROFESSIONAL -->
+  <section id="professional" class="fade">
+    <h2>Professional</h2>
+    <div class="cards">
+      <a href="Julissa_Morales_Resume.pdf" target="_blank" class="card">
+        View Resume (PDF)
+      </a>
+      <a href="https://www.linkedin.com/in/julissamorales" target="_blank" class="card">
+        LinkedIn Profile ↗
+      </a>
     </div>
+  </section>
 
-    <div class="bubbles">
-      <a href="#about" class="bubble">About Me</a>
-
-      <div class="dropdown">
-        <div class="dropdown-btn">Professional</div>
-        <div class="dropdown-content">
-          <a href="Julissa.Morales.Resume.pdf" target="_blank" rel="noopener noreferrer">
-            Resume (PDF)
-          </a>
-          <a href="https://www.linkedin.com/in/julissamorales" target="_blank" rel="noopener noreferrer">
-            LinkedIn ↗
-          </a>
-        </div>
-      </div>
-
-      <a href="#interests" class="bubble">Interests</a>
+  <!-- INTERESTS -->
+  <section id="interests" class="fade">
+    <h2>Interests</h2>
+    <div class="tags">
+      <div class="tag">Squash</div>
+      <div class="tag">Coding</div>
+      <div class="tag">Dancing</div>
+      <div class="tag">Finance</div>
+      <div class="tag">Marketing Strategy</div>
     </div>
-  </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    © 2026 Julissa Morales · Babson College
+  </footer>
+
+  <!-- SCROLL ANIMATION SCRIPT -->
+  <script>
+    const faders = document.querySelectorAll(".fade");
+
+    const appearOnScroll = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("show");
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
+
+    faders.forEach(fade => {
+      appearOnScroll.observe(fade);
+    });
+  </script>
 
 </body>
 </html>
