@@ -2,25 +2,34 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>About Me</title>
+  <title>Julissa Morales</title>
 
   <style>
     body {
-      background-color: #cfe9f7; /* light blue */
-      font-family: Arial, sans-serif;
-      padding: 40px;
+      background-color: #e6f2f8; /* soft light blue */
+      font-family: "Arial", sans-serif;
+      margin: 0;
+      padding: 0;
+      color: #333;
+      line-height: 1.6;
     }
 
-    /* Centered name section */
+    /* Main container */
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 60px 40px;
+    }
+
+    /* Header / Name */
     .name-section {
       text-align: center;
-      margin-top: 80px;
-      margin-bottom: 40px;
+      margin-bottom: 60px;
     }
 
     .intro-text {
       font-size: 18px;
-      color: black;
+      color: #000;
     }
 
     .name {
@@ -28,22 +37,33 @@
       font-size: 56px;
       color: darkblue;
       font-weight: bold;
+      margin-top: 10px;
     }
 
-    /* Styled words */
+    /* Section titles */
+    h2 {
+      font-family: "Georgia", serif;
+      font-size: 28px;
+      color: #1a3d5c;
+      border-bottom: 2px solid #bcd9ea;
+      padding-bottom: 8px;
+      margin-top: 60px;
+    }
+
+    /* Elegant emphasis styles */
     .squash {
       color: purple;
       font-weight: bold;
-      font-size: 20px;
+      font-size: 18px;
     }
 
     .eleven {
-      color: deeppink;
+      color: #c2185b; /* dark pink */
       font-weight: bold;
     }
 
     .big {
-      font-size: 26px;
+      font-size: 24px;
       font-weight: bold;
     }
 
@@ -54,7 +74,7 @@
 
     .exploring {
       color: darkgreen;
-      font-size: 22px;
+      font-size: 20px;
       font-weight: bold;
     }
 
@@ -68,52 +88,84 @@
     }
 
     .learning {
-      letter-spacing: 4px;
-      color: #00bcd4; /* cyan blue */
+      letter-spacing: 3px;
+      color: #00a6c8; /* refined cyan */
       font-weight: bold;
     }
 
     .new-hobbies {
-      color: orange;
-      font-family: "Comic Sans MS", "Trebuchet MS", cursive;
+      color: #e67e22; /* elegant orange */
+      font-family: "Georgia", serif;
       font-weight: bold;
     }
 
     .share {
-      color: rebeccapurple;
+      color: #6a1b9a; /* professional purple */
       font-weight: bold;
+    }
+
+    /* Resume list */
+    ul {
+      margin-top: 15px;
+    }
+
+    li {
+      margin-bottom: 10px;
     }
   </style>
 </head>
 
 <body>
 
-  <div class="name-section">
-    <div class="intro-text">My name is</div>
-    <div class="name">Julissa Morales</div>
+  <div class="container">
+
+    <!-- NAME -->
+    <div class="name-section">
+      <div class="intro-text">My name is</div>
+      <div class="name">Julissa Morales</div>
+    </div>
+
+    <!-- ABOUT ME -->
+    <h2>About Me</h2>
+    <p>
+      I have played <span class="squash">squash</span> since I was 
+      <span class="eleven">eleven</span>, and it has been a 
+      <span class="big">big</span> part of 
+      <span class="my-life">my life</span>.
+    </p>
+
+    <p>
+      More recently, I have started 
+      <span class="exploring">exploring</span> painting after taking a course last semester that I 
+      <span class="enjoyed">enjoyed</span>.
+    </p>
+
+    <p>
+      As someone who 
+      <span class="love">loves ❤️</span> 
+      <span class="learning">learning</span> new things, 
+      I created this website to explore 
+      <span class="new-hobbies">new hobbies</span> and to 
+      <span class="share">share</span> my own progress along the way.
+    </p>
+
+    <!-- RESUME -->
+    <h2>Resume</h2>
+    <ul>
+      <li><strong>Education:</strong> [Your school / program]</li>
+      <li><strong>Experience:</strong> [Clubs, teams, jobs, or leadership roles]</li>
+      <li><strong>Skills:</strong> Teamwork, creativity, discipline, time management</li>
+    </ul>
+
+    <!-- INTERESTS -->
+    <h2>Interests</h2>
+    <ul>
+      <li>Competitive squash</li>
+      <li>Painting and creative expression</li>
+      <li>Learning new skills and hobbies</li>
+    </ul>
+
   </div>
-
-  <p>
-    I have played <span class="squash">squash</span> since I was 
-    <span class="eleven">eleven</span>, and it has been a 
-    <span class="big">big</span> part of 
-    <span class="my-life">my life</span>.
-  </p>
-
-  <p>
-    More recently, I have started 
-    <span class="exploring">exploring</span> painting after taking a course last semester that I 
-    <span class="enjoyed">enjoyed</span>.
-  </p>
-
-  <p>
-    As someone who 
-    <span class="love">loves ❤️</span> 
-    <span class="learning">learning</span> new things, 
-    I created this website to 
-    <span class="new-hobbies">new hobbies</span> and to 
-    <span class="share">share</span> my own progress along the way.
-  </p>
 
 </body>
 </html>
