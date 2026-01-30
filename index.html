@@ -6,166 +6,84 @@
 
   <style>
     body {
-      background-color: #e6f2f8; /* soft light blue */
-      font-family: "Arial", sans-serif;
       margin: 0;
-      padding: 0;
-      color: #333;
-      line-height: 1.6;
+      height: 100vh;
+      background-color: #e6f2f8;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: Arial, sans-serif;
+      overflow: hidden;
     }
 
-    /* Main container */
-    .container {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 60px 40px;
-    }
-
-    /* Header / Name */
-    .name-section {
+    .center {
       text-align: center;
-      margin-bottom: 60px;
     }
 
-    .intro-text {
-      font-size: 18px;
-      color: #000;
+    .title {
+      font-size: 42px;
+      color: #1a3d5c;
+      font-family: Georgia, serif;
     }
 
     .name {
-      font-family: "Times New Roman", serif; /* Roman font */
-      font-size: 56px;
+      font-size: 48px;
       color: darkblue;
-      font-weight: bold;
-      margin-top: 10px;
+      font-family: "Times New Roman", serif;
+      display: none;
     }
 
-    /* Section titles */
-    h2 {
-      font-family: "Georgia", serif;
-      font-size: 28px;
-      color: #1a3d5c;
-      border-bottom: 2px solid #bcd9ea;
-      padding-bottom: 8px;
-      margin-top: 60px;
+    .bubbles {
+      margin-top: 40px;
+      display: none;
     }
 
-    /* Elegant emphasis styles */
-    .squash {
-      color: purple;
-      font-weight: bold;
+    .bubble {
+      display: inline-block;
+      width: 160px;
+      height: 160px;
+      margin: 15px;
+      background-color: white;
+      border-radius: 50%;
+      line-height: 160px;
       font-size: 18px;
-    }
-
-    .eleven {
-      color: #c2185b; /* dark pink */
       font-weight: bold;
+      color: #1a3d5c;
+      text-decoration: none;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+      transition: transform 0.3s, background-color 0.3s;
     }
 
-    .big {
-      font-size: 24px;
-      font-weight: bold;
-    }
-
-    .my-life {
-      text-decoration: underline;
-      font-family: "Georgia", serif;
-    }
-
-    .exploring {
-      color: darkgreen;
-      font-size: 20px;
-      font-weight: bold;
-    }
-
-    .enjoyed {
-      font-style: italic;
-    }
-
-    .love {
-      color: darkred;
-      font-weight: bold;
-    }
-
-    .learning {
-      letter-spacing: 3px;
-      color: #00a6c8; /* refined cyan */
-      font-weight: bold;
-    }
-
-    .new-hobbies {
-      color: #e67e22; /* elegant orange */
-      font-family: "Georgia", serif;
-      font-weight: bold;
-    }
-
-    .share {
-      color: #6a1b9a; /* professional purple */
-      font-weight: bold;
-    }
-
-    /* Resume list */
-    ul {
-      margin-top: 15px;
-    }
-
-    li {
-      margin-bottom: 10px;
+    .bubble:hover {
+      transform: scale(1.1);
+      background-color: #d9ecf7;
     }
   </style>
 </head>
 
 <body>
 
-  <div class="container">
+  <div class="center">
+    <div id="welcome" class="title">Welcome to My Page</div>
+    <div id="name" class="name">My name is Julissa Morales</div>
 
-    <!-- NAME -->
-    <div class="name-section">
-      <div class="intro-text">My name is</div>
-      <div class="name">Julissa Morales</div>
+    <div id="bubbles" class="bubbles">
+      <a href="#about" class="bubble">About Me</a>
+      <a href="#resume" class="bubble">Resume</a>
+      <a href="#interests" class="bubble">Interests</a>
     </div>
-
-    <!-- ABOUT ME -->
-    <h2>About Me</h2>
-    <p>
-      I have played <span class="squash">squash</span> since I was 
-      <span class="eleven">eleven</span>, and it has been a 
-      <span class="big">big</span> part of 
-      <span class="my-life">my life</span>.
-    </p>
-
-    <p>
-      More recently, I have started 
-      <span class="exploring">exploring</span> painting after taking a course last semester that I 
-      <span class="enjoyed">enjoyed</span>.
-    </p>
-
-    <p>
-      As someone who 
-      <span class="love">loves ❤️</span> 
-      <span class="learning">learning</span> new things, 
-      I created this website to explore 
-      <span class="new-hobbies">new hobbies</span> and to 
-      <span class="share">share</span> my own progress along the way.
-    </p>
-
-    <!-- RESUME -->
-    <h2>Resume</h2>
-    <ul>
-      <li><strong>Education:</strong> [Your school / program]</li>
-      <li><strong>Experience:</strong> [Clubs, teams, jobs, or leadership roles]</li>
-      <li><strong>Skills:</strong> Teamwork, creativity, discipline, time management</li>
-    </ul>
-
-    <!-- INTERESTS -->
-    <h2>Interests</h2>
-    <ul>
-      <li>Competitive squash</li>
-      <li>Painting and creative expression</li>
-      <li>Learning new skills and hobbies</li>
-    </ul>
-
   </div>
+
+  <script>
+    setTimeout(() => {
+      document.getElementById("welcome").style.display = "none";
+      document.getElementById("name").style.display = "block";
+    }, 6000);
+
+    setTimeout(() => {
+      document.getElementById("bubbles").style.display = "block";
+    }, 7500);
+  </script>
 
 </body>
 </html>
