@@ -30,7 +30,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      background: rgba(255,255,255,0.9);
+      background: rgba(255,255,255,0.95);
       backdrop-filter: blur(8px);
       box-shadow: 0 4px 12px rgba(0,0,0,0.05);
       z-index: 1000;
@@ -46,7 +46,7 @@
       font-weight: 500;
     }
 
-    /* SECTIONS (GLOBAL) */
+    /* SECTIONS */
     section {
       padding: 60px 80px;
       max-width: 1100px;
@@ -82,8 +82,8 @@
       justify-content: center;
       align-items: center;
       text-align: center;
-      padding-top: 120px;
-      padding-bottom: 30px;
+      padding-top: 140px;
+      padding-bottom: 20px;
     }
 
     .hero h1 {
@@ -96,16 +96,7 @@
     .hero p {
       font-size: 20px;
       color: #334e68;
-      margin-top: 0;
-    }
-
-    /* ABOUT + PROFESSIONAL PULL-UP */
-    #about {
-      padding-top: 30px;
-    }
-
-    #professional {
-      padding-top: 40px;
+      margin: 0;
     }
 
     /* CARDS */
@@ -140,7 +131,7 @@
       transform: translateY(-6px);
     }
 
-    /* INTEREST TAGS */
+    /* TAGS */
     .tags {
       display: flex;
       gap: 14px;
@@ -164,7 +155,7 @@
       color: #627d98;
     }
 
-    /* ANIMATIONS */
+    /* ANIMATION */
     .fade {
       opacity: 0;
       transform: translateY(25px);
@@ -200,6 +191,80 @@
   <section id="about" class="fade">
     <h2>About Me</h2>
     <p>
-      I am a Babson College student with interests in sales, marketing, and finance, supported
-      by experience across consulting, operations, and investment analysis. As a first-generation
-      college student
+      I am a Babson College student with interests in sales, marketing, and finance, supported by
+      experience across consulting, operations, and investment analysis. As a first-generation
+      college student, I bring a strong sense of responsibility, leadership, and adaptability to
+      every environment I work in.
+    </p>
+  </section>
+
+  <!-- PROFESSIONAL -->
+  <section id="professional" class="fade">
+    <h2>Professional</h2>
+
+    <div class="cards">
+      <a href="Julissa.Morales.Resume.pdf" target="_blank" class="card">
+        View Resume (PDF)
+        <span>Experience & education</span>
+      </a>
+
+      <a href="https://www.linkedin.com/in/julissamorales" target="_blank" class="card">
+        LinkedIn Profile ↗
+        <span>Career & professional updates</span>
+      </a>
+    </div>
+
+    <h3>Featured Articles & Media</h3>
+
+    <div class="cards">
+      <a href="https://annualreport.squashbusters.org/profile/natalie-and-julissa/" target="_blank" class="card">
+        SquashBusters Family Feature
+        <span>Impact profile highlighting academic growth and leadership</span>
+      </a>
+
+      <a href="https://www.nbcboston.com/video/entertainment/hub-today/celebrating-75-years-of-junior-achievement/3811369/" target="_blank" class="card">
+        NBC Boston – Junior Achievement
+        <span>Television segment celebrating youth leadership</span>
+      </a>
+
+      <a href="https://www.youtube.com/watch?v=y22Qj8P0-SE" target="_blank" class="card">
+        YouTube Feature
+        <span>Community involvement spotlight</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- INTERESTS -->
+  <section id="interests" class="fade">
+    <h2>Interests</h2>
+    <div class="tags">
+      <div class="tag">Squash</div>
+      <div class="tag">Coding</div>
+      <div class="tag">Dancing</div>
+      <div class="tag">Finance</div>
+      <div class="tag">Marketing Strategy</div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    © 2026 Julissa Morales · Babson College
+  </footer>
+
+  <!-- SCROLL FADE SCRIPT -->
+  <script>
+    const faders = document.querySelectorAll(".fade");
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("show");
+        }
+      });
+    }, { threshold: 0.2 });
+
+    faders.forEach(fade => observer.observe(fade));
+  </script>
+
+</body>
+</html>
