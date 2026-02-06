@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Julissa Morales</title>
-  <link rel="icon" type="image/png" href="logo4.png">
+  <link rel="icon" type="image/png" href="favicon.png">
 
   <style>
     html {
@@ -22,6 +22,7 @@
       color: inherit;
     }
 
+    /* HEADER */
     header {
       position: fixed;
       top: 0;
@@ -46,6 +47,7 @@
       font-weight: 500;
     }
 
+    /* SECTIONS */
     section {
       padding: 60px 80px;
       max-width: 1100px;
@@ -73,6 +75,7 @@
       margin-top: 12px;
     }
 
+    /* HERO */
     .hero {
       min-height: 55vh;
       display: flex;
@@ -97,6 +100,7 @@
       margin: 0;
     }
 
+    /* CARDS */
     .cards {
       display: flex;
       gap: 22px;
@@ -128,6 +132,7 @@
       transform: translateY(-6px);
     }
 
+    /* TAGS */
     .tags {
       display: flex;
       gap: 14px;
@@ -143,6 +148,7 @@
       box-shadow: 0 6px 16px rgba(0,0,0,0.08);
     }
 
+    /* FOOTER */
     footer {
       text-align: center;
       padding: 40px;
@@ -150,6 +156,7 @@
       color: #627d98;
     }
 
+    /* ANIMATION */
     .fade {
       opacity: 0;
       transform: translateY(25px);
@@ -165,6 +172,7 @@
 
 <body>
 
+  <!-- HEADER -->
   <header>
     <div class="logo">JM</div>
     <nav>
@@ -174,24 +182,27 @@
     </nav>
   </header>
 
+  <!-- HERO -->
   <section class="hero fade">
     <h1>Julissa Morales</h1>
     <p>First-Generation College Student & Diversity Leadership Scholar at Babson College</p>
   </section>
 
+  <!-- ABOUT -->
   <section id="about" class="fade">
     <h2>Welcome to My Page!</h2>
     <p>
       I'm Julissa Morales — a first-generation senior at Babson College, passionate about learning, leadership, and community. Whether you're here to explore my professional journey, dive into media features, or discover the hobbies that keep me grounded, I'm glad you stopped by.
     </p>
     <p>
-      This site is a reflection of the experiences that have shaped me: from squash courts to coding projects, from family roots in Lawrence to campus life at Babson. You'll find my resume, media highlights, and a glimpse into the interests that fuel my growth.
+      This site highlights the experiences that have shaped me: from squash courts to coding projects, from family roots in Lawrence to campus life at Babson. Here, you’ll find my resume, media features, and a glimpse into the interests that fuel my growth.
     </p>
     <p>
       I created this space to share, connect, and inspire — especially for students, mentors, and anyone curious about the paths we carve through college and beyond. Thanks for visiting!
     </p>
   </section>
 
+  <!-- PROFESSIONAL -->
   <section id="professional" class="fade">
     <h2>Professional</h2>
 
@@ -227,6 +238,7 @@
     </div>
   </section>
 
+  <!-- INTERESTS -->
   <section id="interests" class="fade">
     <h2>Interests</h2>
     <div class="tags">
@@ -235,11 +247,13 @@
     </div>
   </section>
 
+  <!-- FOOTER -->
   <footer>
     © 2026 Julissa Morales · Babson College ·
     <a href="mailto:moralesjulissa3112@gmail.com">Contact</a>
   </footer>
 
+  <!-- SCROLL FADE SCRIPT -->
   <script>
     const faders = document.querySelectorAll(".fade");
 
