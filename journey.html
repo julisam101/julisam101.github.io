@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Journey – Julissa Morales</title>
+  <link rel="icon" type="image/png" href="favicon.png">
+
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      color: #102a43;
+      background: linear-gradient(135deg, #e6f2f8, #f9fcff);
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* HEADER */
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      padding: 18px 60px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(8px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      z-index: 1000;
+    }
+
+    .logo {
+      font-weight: 700;
+      letter-spacing: 2px;
+    }
+
+    nav a {
+      margin-left: 28px;
+      font-weight: 500;
+    }
+
+    /* PAGE CONTENT */
+    section {
+      padding: 180px 80px 60px 80px; /* FIXED: ensures content is visible below header */
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    h2 {
+      font-size: 32px;
+      margin-bottom: 20px;
+      border-bottom: 3px solid #dceefb;
+      display: inline-block;
+    }
+
+    /* TIMELINE */
+    .timeline-container {
+      display: flex;
+      gap: 40px;
+      overflow-x: auto;
+      padding: 20px 0;
+      scrollbar-width: none;
+    }
+
+    .timeline-container::-webkit-scrollbar {
+      display: none;
+    }
+
+    .timeline-item {
+      text-align: center;
+      position: relative;
+      min-width: 160px;
+    }
+
+    .timeline-dot {
+      width: 14px;
+      height: 14px;
+      background: #102a43;
+      border-radius: 50%;
+      margin: 0 auto 10px auto;
+    }
+
+    .timeline-year {
+      background: white;
+      border: none;
+      padding: 10px 18px;
+      border-radius: 20px;
+      font-weight: 600;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+
+    .timeline-year:hover {
+      transform: translateY(-4px);
+    }
+
+    .timeline-content {
+      margin-top: 12px;
+      background: white;
+      padding: 16px;
+      border-radius: 12px;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+      display: none;
+      max-width: 260px;
+      text-align: left;
+    }
+
+    /* ANIMATION */
+    .fade {
+      opacity: 0;
+      transform: translateY(25px);
+      transition: all 0.8s ease;
+    }
+
+    .fade.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="logo">JM</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="journey.html">Journey</a>
+    </nav>
+  </header>
+
+  <!-- JOURNEY SECTION -->
+  <section id="timeline" class="fade">
+    <h2>My Journey</h2>
+
+    <div class="timeline-container">
+
+      <!-- 2022 -->
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <button class="timeline-year">2022</button>
+        <div class="timeline-content">
+          <p><strong>Graduated Notre Dame Cristo Rey High School</strong> as Salutatorian and a High Honors student, completing a rigorous work‑study program while balancing academics, leadership, and community involvement.</p>
+          <p><strong>Joined Semillas Society</strong> as Career Coordinator, connecting first‑generation students with Babson’s career development resources and professional opportunities.</p>
+        </div>
+      </div>
+
+      <!-- 2023 -->
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <button class="timeline-year">2023</button>
+        <div class="timeline-content">
+          <p><strong>Interned at Voya Financial</strong>, supporting the Investment Operations team through data validation, portfolio reconciliation, and daily trade processing while strengthening analytical and operational skills.</p>
+        </div>
+      </div>
+
+      <!-- 2024 -->
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <button class="timeline-year">2024</button>
+        <div class="timeline-content">
+          <p>Attended the <strong>ILA Dialogue Lab</strong> at the University of San Diego, exploring how leadership can be exercised meaningfully in response to global issues.</p>
+          <p>Participated in the <strong>First‑Generation Student Success Conference</strong> at Florida International University, learning from first‑gen leaders about career readiness, awareness, and financial literacy.</p>
+          <p><strong>Vice President of Semillas Society</strong>, expanding the club’s presence and helping host over 12 events in one semester.</p>
+          <p>Led a <strong>two‑day financial literacy workshop</strong> in partnership with M&T Bank, supporting first‑generation students in building financial confidence.</p>
+          <p><strong>Interned at Elevance Health</strong>, contributing to business operations, analytics, and process improvement initiatives.</p>
+        </div>
+      </div>
+
+      <!-- 2025 -->
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <button class="timeline-year">2025</button>
+        <div class="timeline-content">
+          <p>Studied abroad in <strong>Sevilla, Spain</strong>, immersing myself in Spanish culture for 12 weeks while strengthening my language skills and global perspective.</p>
+          <p><strong>Interned at Brown Advisory</strong>, supporting advisory teams through market research, portfolio analysis, and client‑focused investment materials.</p>
+        </div>
+      </div>
+
+      <!-- 2026 -->
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <button class="timeline-year">2026</button>
+        <div class="timeline-content">
+          <p>Accepted into the <strong>International Summer School at Heidelberg University</strong> in Germany, where I will study German language and culture alongside students from around the world.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SCRIPT -->
+  <script>
+    const faders = document.querySelectorAll(".fade");
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("show");
+        }
+      });
+    }, { threshold: 0.2 });
+
+    faders.forEach(fade => observer.observe(fade));
+
+    const timelineButtons = document.querySelectorAll(".timeline-year");
+
+    timelineButtons.forEach(button => {
+      button.addEventListener("click", () => {
+        const content = button.nextElementSibling;
+        content.style.display = content.style.display === "block" ? "none" : "block";
+      });
+    });
+  </script>
+
+</body>
+</html>
