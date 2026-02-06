@@ -1,90 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>My Journey – Julissa Morales</title>
-  <link rel="icon" type="logo4/png" href="favicon.png">
 
-  <!-- Fancy title font -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <!-- Playfair Display -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
 
   <style>
-    html {
-      scroll-behavior: smooth;
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
 
     body {
-      margin: 0;
-      font-family: "Inter", sans-serif;
+      font-family: "Playfair Display", serif;
+      background: radial-gradient(circle at center, #eaf3ff 0%, #f9fcff 60%, #ffffff 100%);
       color: #102a43;
-      background: radial-gradient(circle at top, #e6f2ff 0, #f9fcff 40%, #fdfbff 100%);
-      overflow-x: hidden;
+      overflow: hidden;
     }
 
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    /* HEADER */
     header {
       position: fixed;
       top: 0;
       width: 100%;
-      padding: 18px 60px;
+      padding: 18px 40px;
       display: flex;
-      justify-content: space-between;
       align-items: center;
-      background: rgba(255,255,255,0.9);
+      gap: 40px;
+      background: rgba(255, 255, 255, 0.55);
       backdrop-filter: blur(14px);
-      box-shadow: 0 4px 18px rgba(0,0,0,0.06);
       z-index: 1000;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.4);
     }
 
     .logo {
-      font-weight: 700;
+      font-size: 20px;
+      font-weight: 600;
       letter-spacing: 2px;
     }
 
+    nav {
+      display: flex;
+      gap: 28px;
+      font-size: 16px;
+    }
+
     nav a {
-      margin-left: 28px;
-      font-weight: 500;
+      text-decoration: none;
+      color: inherit;
     }
 
-    nav a:hover {
-      opacity: 0.7;
-    }
-
-    /* PAGE CONTENT */
     main {
-      padding: 160px 40px 100px 40px;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding-top: 80px;
       text-align: center;
-      position: relative;
     }
 
     h1 {
-      font-family: "Playfair Display", serif;
       font-size: 42px;
-      letter-spacing: 1px;
-      margin-bottom: 10px;
+      margin-bottom: 8px;
     }
 
     .subtitle {
-      font-size: 15px;
-      color: #5a7184;
-      margin-bottom: 40px;
+      font-size: 18px;
+      margin-bottom: 24px;
+      opacity: 0.8;
     }
 
-    /* GRADIENT LINE */
     .gradient-line {
-      width: 80%;
+      width: 60%;
       height: 4px;
-      margin: 0 auto 40px auto;
       background: linear-gradient(90deg, #4a6cf7, #8a4af7, #4ac0f7);
       background-size: 200% 100%;
       animation: gradientMove 6s infinite alternate ease-in-out;
       border-radius: 999px;
-      opacity: 0.6;
+      margin-bottom: 40px;
     }
 
     @keyframes gradientMove {
@@ -92,270 +88,205 @@
       100% { background-position: 100% 50%; }
     }
 
-    /* HORIZONTAL TIMELINE */
-    .timeline-scroll {
+    /* TIMELINE */
+    .timeline-wrapper {
       display: flex;
-      gap: 40px;
-      overflow-x: auto;
-      padding: 20px 0;
-      scrollbar-width: thin;
       justify-content: center;
-    }
-
-    .timeline-scroll::-webkit-scrollbar {
-      height: 8px;
-    }
-
-    .timeline-scroll::-webkit-scrollbar-thumb {
-      background: #c5d3ff;
-      border-radius: 999px;
+      gap: 20px; /* smaller gap so all years fit */
+      width: 100%;
+      padding: 0 20px;
     }
 
     .timeline-item {
-      min-width: 260px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 14px;
-      opacity: 0;
-      transform: translateY(24px);
-      transition: all 0.7s ease;
+      text-align: center;
+      width: 200px; /* reduced width so all 5 fit */
+      transition: 0.3s ease;
     }
 
-    .timeline-item.show {
+    /* Spotlight effect */
+    .dimmed {
+      opacity: 0.75;
+      filter: blur(0.5px);
+    }
+
+    /* YEAR BOX */
+    .year-box {
+      background: rgba(255, 255, 255, 0.25);
+      backdrop-filter: blur(14px);
+      border: 1px solid rgba(255, 255, 255, 0.55);
+      padding: 10px 20px;
+      border-radius: 20px;
+      font-size: 20px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.3s ease;
+      margin: 0 auto;
+      width: fit-content;
+    }
+
+    .year-box:hover {
+      transform: translateY(-4px);
+    }
+
+    /* CONTENT BOX */
+    .content-box {
+      width: 220px; /* slightly wider than year box */
+      margin: 14px auto 0;
+      background: rgba(255, 255, 255, 0.25);
+      border: 1px solid rgba(255, 255, 255, 0.55);
+      border-radius: 20px;
+      padding: 16px;
+      box-shadow: 0 18px 40px rgba(15, 23, 42, 0.18);
+      backdrop-filter: blur(18px);
+      opacity: 0;
+      max-height: 0;
+      overflow: hidden;
+      transform: translateY(-10px);
+      transition:
+        opacity 0.4s ease,
+        max-height 0.6s ease,
+        transform 0.4s ease;
+    }
+
+    .timeline-item.open .content-box {
       opacity: 1;
+      max-height: 1000px;
       transform: translateY(0);
     }
 
-    .timeline-dot {
-      width: 16px;
-      height: 16px;
-      background: #102a43;
-      border-radius: 50%;
-      box-shadow: 0 0 12px rgba(16,42,67,0.35);
-    }
-
-    .timeline-year-btn {
-      background: white;
-      border: none;
-      padding: 10px 20px;
-      border-radius: 999px;
-      font-weight: 600;
-      cursor: pointer;
-      transition: 0.25s ease;
-      box-shadow: 0 6px 16px rgba(0,0,0,0.08);
-    }
-
-    .timeline-year-btn:hover {
-      transform: translateY(-3px) scale(1.03);
-      background: #f0f4ff;
-    }
-
-    .timeline-year-btn.active {
-      background: #4a6cf7;
-      color: white;
-      box-shadow: 0 10px 24px rgba(74,108,247,0.45);
-    }
-
-    /* GLASS CARD */
-    .timeline-card {
-      width: 260px;
-      padding: 18px 20px;
-      border-radius: 20px;
-      background: rgba(255,255,255,0.18);
-      border: 1px solid rgba(255,255,255,0.55);
-      box-shadow: 0 18px 40px rgba(15,23,42,0.18);
-      backdrop-filter: blur(18px);
-      -webkit-backdrop-filter: blur(18px);
-      max-height: 0;
-      opacity: 0;
-      overflow: hidden;
-      transition: max-height 0.45s ease, opacity 0.35s ease;
-      text-align: left;
-    }
-
-    .timeline-card.open {
-      max-height: 300px;
-      opacity: 1;
-    }
-
-    .timeline-card ul {
+    .content-box ul {
       list-style: none;
-      padding: 0;
-      margin: 0;
-      display: grid;
-      gap: 10px;
+      padding-left: 0;
     }
 
-    .timeline-card li::before {
-      content: "•";
-      color: #4a6cf7;
-      font-weight: 700;
-      margin-right: 6px;
-    }
-
-    /* HOME BUTTON */
-    .home-bar {
-      position: fixed;
-      bottom: 24px;
-      left: 50%;
-      transform: translateX(-50%);
-      z-index: 999;
+    .content-box li {
+      margin-bottom: 6px;
+      font-size: 15px;
     }
 
     .home-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
+      position: fixed;
+      bottom: 24px;
+      right: 40px;
+      transform: none;
       padding: 10px 20px;
       border-radius: 999px;
-      background: rgba(255,255,255,0.9);
-      border: 1px solid rgba(148,163,184,0.5);
-      box-shadow: 0 10px 26px rgba(15,23,42,0.18);
+      background: rgba(255, 255, 255, 0.9);
+      border: 1px solid rgba(148, 163, 184, 0.5);
+      box-shadow: 0 10px 26px rgba(15, 23, 42, 0.18);
       font-size: 14px;
-      font-weight: 500;
       cursor: pointer;
       transition: 0.25s ease;
       backdrop-filter: blur(12px);
     }
 
-    .home-btn:hover {
-      transform: translateY(-4px);
-      background: white;
-    }
 
-    .icon {
-      font-size: 16px;
     }
   </style>
 </head>
 
 <body>
 
-  <!-- HEADER -->
-  <header>
-    <div class="logo">JM</div>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="journey.html">Journey</a>
-    </nav>
-  </header>
+<header>
+  <div class="logo">JM</div>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="journey.html">Journey</a>
+    <a href="projects.html">Projects</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
 
-  <main>
-    <h1>My Journey</h1>
-    <p class="subtitle">A few of the moments that shaped how I think, lead, and show up for others.</p>
+<main>
+  <h1>My Journey</h1>
+  <p class="subtitle">A few of the moments that shaped how I think, lead, and show up for others.</p>
+  <div class="gradient-line"></div>
 
-    <div class="gradient-line"></div>
+  <div class="timeline-wrapper">
 
-    <!-- HORIZONTAL TIMELINE -->
-    <div class="timeline-scroll">
-
-      <!-- 2022 -->
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <button class="timeline-year-btn" data-year="y2022">2022</button>
-        <div class="timeline-card" id="y2022">
-          <ul>
-            <li>Graduated Notre Dame Cristo Rey as Salutatorian.</li>
-            <li>Balanced work‑study, leadership, and academics.</li>
-            <li>Joined Semillas Society as Career Coordinator.</li>
-          </ul>
-        </div>
+    <!-- 2022 -->
+    <div class="timeline-item">
+      <div class="year-box">2022</div>
+      <div class="content-box">
+        <ul>
+          <li>Graduated Notre Dame Cristo Rey as Salutatorian.</li>
+          <li>Balanced work‑study, leadership, and academics.</li>
+          <li>Joined Semillas Society as Career Coordinator.</li>
+        </ul>
       </div>
-
-      <!-- 2023 -->
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <button class="timeline-year-btn" data-year="y2023">2023</button>
-        <div class="timeline-card" id="y2023">
-          <ul>
-            <li>Interned at Voya Financial in Investment Ops.</li>
-            <li>Supported trade processing and reconciliation.</li>
-            <li>Strengthened confidence with financial systems.</li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- 2024 -->
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <button class="timeline-year-btn" data-year="y2024">2024</button>
-        <div class="timeline-card" id="y2024">
-          <ul>
-            <li>Attended ILA Dialogue Lab in San Diego.</li>
-            <li>Joined FIU’s First‑Gen Student Success Conference.</li>
-            <li>Served as VP of Semillas Society.</li>
-            <li>Co‑led a financial literacy workshop.</li>
-            <li>Interned at Elevance Health.</li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- 2025 -->
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <button class="timeline-year-btn" data-year="y2025">2025</button>
-        <div class="timeline-card" id="y2025">
-          <ul>
-            <li>Studied abroad in Sevilla, Spain.</li>
-            <li>Deepened Spanish and cultural awareness.</li>
-            <li>Interned at Brown Advisory.</li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- 2026 -->
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <button class="timeline-year-btn" data-year="y2026">2026</button>
-        <div class="timeline-card" id="y2026">
-          <ul>
-            <li>Accepted into Heidelberg University’s Summer School.</li>
-            <li>Preparing to study German language and culture.</li>
-          </ul>
-        </div>
-      </div>
-
     </div>
-  </main>
 
-  <!-- HOME BUTTON -->
-  <div class="home-bar">
-    <a href="index.html" class="home-btn">
-      <span class="icon">←</span>
-      <span>Back to home</span>
-    </a>
+    <!-- 2023 -->
+    <div class="timeline-item">
+      <div class="year-box">2023</div>
+      <div class="content-box">
+        <ul>
+          <li>Interned at Voya Financial in Investment Ops.</li>
+          <li>Supported trade processing and reconciliation.</li>
+          <li>Strengthened confidence with financial systems.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 2024 -->
+    <div class="timeline-item">
+      <div class="year-box">2024</div>
+      <div class="content-box">
+        <ul>
+          <li>Attended ILA Dialogue Lab in San Diego.</li>
+          <li>Joined FIU’s First‑Gen Student Success Conference.</li>
+          <li>Served as VP of Semillas Society.</li>
+          <li>Co‑led a financial literacy workshop.</li>
+          <li>Interned at Elevance Health.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 2025 -->
+    <div class="timeline-item">
+      <div class="year-box">2025</div>
+      <div class="content-box">
+        <ul>
+          <li>Studied abroad in Sevilla, Spain.</li>
+          <li>Deepened Spanish and cultural awareness.</li>
+          <li>Interned at Brown Advisory.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 2026 -->
+    <div class="timeline-item">
+      <div class="year-box">2026</div>
+      <div class="content-box">
+        <ul>
+          <li>Accepted into Heidelberg University’s Summer School.</li>
+          <li>Preparing to study German language and culture.</li>
+        </ul>
+      </div>
+    </div>
+
   </div>
 
-  <script>
-    // Fade-in animation
-    const items = document.querySelectorAll(".timeline-item");
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) entry.target.classList.add("show");
+</main>
+
+<a href="index.html" class="home-btn">← Back to home</a>
+
+<script>
+  const items = document.querySelectorAll(".timeline-item");
+
+  items.forEach(item => {
+    item.querySelector(".year-box").addEventListener("click", () => {
+
+      items.forEach(i => {
+        i.classList.remove("open");
+        i.classList.add("dimmed");
       });
-    }, { threshold: 0.2 });
-    items.forEach(item => observer.observe(item));
 
-    // Accordion behavior
-    const buttons = document.querySelectorAll(".timeline-year-btn");
-    const cards = document.querySelectorAll(".timeline-card");
-
-    buttons.forEach(btn => {
-      btn.addEventListener("click", () => {
-        const targetId = btn.getAttribute("data-year");
-        const targetCard = document.getElementById(targetId);
-
-        // Close all
-        cards.forEach(card => card.classList.remove("open"));
-        buttons.forEach(b => b.classList.remove("active"));
-
-        // Open clicked
-        targetCard.classList.add("open");
-        btn.classList.add("active");
-      });
+      item.classList.add("open");
+      item.classList.remove("dimmed");
     });
-  </script>
+  });
+</script>
 
 </body>
 </html>
