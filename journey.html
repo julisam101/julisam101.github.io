@@ -8,6 +8,18 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
 
   <style>
+    :root {
+      --bg-start: #e6f2f8;
+      --bg-end: #f9fcff;
+      --text-primary: #102a43;
+      --text-muted: #486581;
+      --surface: rgba(255, 255, 255, 0.9);
+      --surface-border: #dceefb;
+      --accent: #2f6fa3;
+      --accent-light: #7fb1d6;
+      --shadow-soft: 0 12px 28px rgba(16, 42, 67, 0.14);
+    }
+
     * {
       margin: 0;
       padding: 0;
@@ -16,8 +28,8 @@
 
     body {
       font-family: "Helvetica Neue", Arial, sans-serif;
-      background: radial-gradient(circle at center, #eaf3ff 0%, #f9fcff 60%, #ffffff 100%);
-      color: #102a43;
+      background: linear-gradient(135deg, var(--bg-start), var(--bg-end));
+      color: var(--text-primary);
       overflow: hidden;
     }
 
@@ -25,26 +37,25 @@
       position: fixed;
       top: 0;
       width: 100%;
-      padding: 18px 40px;
+      box-sizing: border-box;
+      padding: 18px 60px;
       display: flex;
+      justify-content: space-between;
       align-items: center;
-      gap: 40px;
-      background: rgba(255, 255, 255, 0.55);
-      backdrop-filter: blur(14px);
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(8px);
       z-index: 1000;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+      box-shadow: 0 4px 12px rgba(16, 42, 67, 0.08);
     }
 
     .logo {
-      font-size: 20px;
-      font-weight: 600;
+      font-weight: 700;
       letter-spacing: 2px;
     }
 
     nav {
       display: flex;
       gap: 28px;
-      font-size: 16px;
     }
 
     nav a {
@@ -70,13 +81,13 @@
     .subtitle {
       font-size: 18px;
       margin-bottom: 24px;
-      opacity: 0.8;
+      color: var(--text-muted);
     }
 
     .gradient-line {
       width: 60%;
       height: 4px;
-      background: linear-gradient(90deg, #4a6cf7, #8a4af7, #4ac0f7);
+      background: linear-gradient(90deg, var(--accent-light), var(--accent), var(--accent-light));
       background-size: 200% 100%;
       animation: gradientMove 6s infinite alternate ease-in-out;
       border-radius: 999px;
@@ -111,9 +122,9 @@
 
     /* YEAR BOX */
     .year-box {
-      background: rgba(255, 255, 255, 0.25);
-      backdrop-filter: blur(14px);
-      border: 1px solid rgba(255, 255, 255, 0.55);
+      background: var(--surface);
+      backdrop-filter: blur(10px);
+      border: 1px solid var(--surface-border);
       padding: 10px 20px;
       border-radius: 20px;
       font-size: 20px;
@@ -122,6 +133,7 @@
       transition: 0.3s ease;
       margin: 0 auto;
       width: fit-content;
+      box-shadow: var(--shadow-soft);
     }
 
     .year-box:hover {
@@ -132,12 +144,12 @@
     .content-box {
       width: 220px; /* slightly wider than year box */
       margin: 14px auto 0;
-      background: rgba(255, 255, 255, 0.25);
-      border: 1px solid rgba(255, 255, 255, 0.55);
+      background: var(--surface);
+      border: 1px solid var(--surface-border);
       border-radius: 20px;
       padding: 16px;
-      box-shadow: 0 18px 40px rgba(15, 23, 42, 0.18);
-      backdrop-filter: blur(18px);
+      box-shadow: var(--shadow-soft);
+      backdrop-filter: blur(10px);
       opacity: 0;
       max-height: 0;
       overflow: hidden;
@@ -155,8 +167,8 @@
     }
 
     .content-box ul {
-      list-style: none;
-      padding-left: 0;
+      list-style: disc;
+      padding-left: 18px;
     }
 
     .content-box li {
@@ -171,17 +183,20 @@
       transform: none;
       padding: 10px 20px;
       border-radius: 999px;
-      background: rgba(255, 255, 255, 0.9);
-      border: 1px solid rgba(148, 163, 184, 0.5);
-      box-shadow: 0 10px 26px rgba(15, 23, 42, 0.18);
+      background: rgba(255, 255, 255, 0.95);
+      border: 1px solid var(--surface-border);
+      box-shadow: var(--shadow-soft);
       font-size: 14px;
       cursor: pointer;
       transition: 0.25s ease;
-      backdrop-filter: blur(12px);
+      backdrop-filter: blur(8px);
+    }
+
+    .home-btn:hover {
+      transform: translateY(-2px);
     }
 
 
-    }
   </style>
 </head>
 
@@ -190,10 +205,11 @@
 <header>
   <div class="logo">JM</div>
   <nav>
-    <a href="index.html">Home</a>
+    <a href="index.html#about">About</a>
     <a href="journey.html">Journey</a>
+    <a href="index.html#professional">Professional</a>
     <a href="projects.html">Projects</a>
-    <a href="contact.html">Contact</a>
+    <a href="index.html#contact">Contact</a>
   </nav>
 </header>
 
@@ -209,9 +225,9 @@
       <div class="year-box">2022</div>
       <div class="content-box">
         <ul>
-          <li>Graduated Notre Dame Cristo Rey as Salutatorian.</li>
-          <li>Balanced work‑study, leadership, and academics.</li>
-          <li>Joined Semillas Society as Career Coordinator.</li>
+          <li>Graduated Notre Dame Cristo Rey as Salutatorian</li>
+          <li>Balanced work‑study, leadership, and academics</li>
+          <li>Joined Semillas Society as Career Coordinator</li>
         </ul>
       </div>
     </div>
@@ -221,9 +237,9 @@
       <div class="year-box">2023</div>
       <div class="content-box">
         <ul>
-          <li>Interned at Voya Financial in Investment Ops.</li>
-          <li>Supported trade processing and reconciliation.</li>
-          <li>Strengthened confidence with financial systems.</li>
+          <li>Interned Interned at Voya Financials as a Projects & Operations intern</li>
+          <li>Supported trade processing and reconciliation</li>
+          <li>Strengthened confidence with financial systems</li>
         </ul>
       </div>
     </div>
@@ -233,11 +249,11 @@
       <div class="year-box">2024</div>
       <div class="content-box">
         <ul>
-          <li>Attended ILA Dialogue Lab in San Diego.</li>
-          <li>Joined FIU’s First‑Gen Student Success Conference.</li>
-          <li>Served as VP of Semillas Society.</li>
-          <li>Co‑led a financial literacy workshop.</li>
-          <li>Interned at Elevance Health.</li>
+          <li>Attended ILA Dialogue Lab in San Diego</li>
+          <li>Joined FIU’s First‑Gen Student Success Conference</li>
+          <li>Served as VP of Semillas Society</li>
+          <li>Co‑led a financial literacy workshop</li>
+          <li>Interned at Elevance Health</li>
         </ul>
       </div>
     </div>
@@ -247,9 +263,9 @@
       <div class="year-box">2025</div>
       <div class="content-box">
         <ul>
-          <li>Studied abroad in Sevilla, Spain.</li>
-          <li>Deepened Spanish and cultural awareness.</li>
-          <li>Interned at Brown Advisory.</li>
+          <li>Studied abroad in Sevilla, Spain</li>
+          <li>Deepened Spanish and cultural awareness</li>
+          <li>Interned at Brown Advisory</li>
         </ul>
       </div>
     </div>
@@ -259,8 +275,8 @@
       <div class="year-box">2026</div>
       <div class="content-box">
         <ul>
-          <li>Accepted into Heidelberg University’s Summer School.</li>
-          <li>Preparing to study German language and culture.</li>
+          <li>Accepted into Heidelberg University’s Summer School</li>
+          <li>Preparing to study German language and culture</li>
         </ul>
       </div>
     </div>
