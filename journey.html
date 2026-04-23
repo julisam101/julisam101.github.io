@@ -55,7 +55,11 @@
 
     nav {
       display: flex;
-      gap: 28px;
+      justify-content: space-evenly;
+      gap: 12px;
+      flex: 1;
+      margin-left: 28px;
+      flex-wrap: wrap;
     }
 
     nav a {
@@ -102,10 +106,11 @@
     /* TIMELINE */
     .timeline-wrapper {
       display: flex;
-      justify-content: center;
+      justify-content: flex-start;
       gap: 20px; /* smaller gap so all years fit */
       width: 100%;
       padding: 0 20px;
+      overflow-x: auto;
     }
 
     .timeline-item {
@@ -205,11 +210,12 @@
 <header>
   <div class="logo">JM</div>
   <nav>
-    <a href="index.html#about">About</a>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
     <a href="journey.html">Journey</a>
-    <a href="index.html#professional">Professional</a>
+    <a href="professional.html">Professional</a>
     <a href="projects.html">Projects</a>
-    <a href="index.html#contact">Contact</a>
+    <a href="contact.html">Contact</a>
   </nav>
 </header>
 
@@ -220,13 +226,49 @@
 
   <div class="timeline-wrapper">
 
+    <!-- 2016 -->
+    <div class="timeline-item">
+      <div class="year-box">2016</div>
+      <div class="content-box">
+        <ul>
+          <li>Joined SquashsBusters and found love for squash</li>
+          <li>Traveled across New England for competitions</li>
+         
+      </div>
+    </div>
+
+    <!-- 2018 -->
+    <div class="timeline-item">
+      <div class="year-box">2018</div>
+      <div class="content-box">
+        <ul>
+          <li>Won first place at SEA Individuals at Williams College</li>
+          
+        </ul>
+      </div>
+    </div>
+
+    <!-- 2019 -->
+    <div class="timeline-item">
+      <div class="year-box">2019</div>
+      <div class="content-box">
+        <ul>
+          <li>Joined Junior Achievement and participated in their Company Program
+            <ul>
+              <li>Created Hogar, a sweater company built around giving back to Lazarus House, a nonprofit supporting individuals experiencing homelessness</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+
     <!-- 2022 -->
     <div class="timeline-item">
       <div class="year-box">2022</div>
       <div class="content-box">
         <ul>
           <li>Graduated Notre Dame Cristo Rey as Salutatorian</li>
-          <li>Balanced work‑study, leadership, and academics</li>
+          <li>Began my journey at Babson College as a Diversity Leadership Scholar</li>
           <li>Joined Semillas Society as Career Coordinator</li>
         </ul>
       </div>
@@ -237,9 +279,11 @@
       <div class="year-box">2023</div>
       <div class="content-box">
         <ul>
-          <li>Interned Interned at Voya Financials as a Projects & Operations intern</li>
-          <li>Supported trade processing and reconciliation</li>
-          <li>Strengthened confidence with financial systems</li>
+          <li>Interned at Voya Financials as an IT Intern
+            <ul>
+              <li>Supported trade processing and reconciliation</li>
+            </ul>
+          </li>
         </ul>
       </div>
     </div>
@@ -250,10 +294,12 @@
       <div class="content-box">
         <ul>
           <li>Attended ILA Dialogue Lab in San Diego</li>
-          <li>Joined FIU’s First‑Gen Student Success Conference</li>
-          <li>Served as VP of Semillas Society</li>
-          <li>Co‑led a financial literacy workshop</li>
-          <li>Interned at Elevance Health</li>
+           <li>Served as VP of Semillas Society
+            <ul>
+              <li>Co‑led a financial literacy workshop</li>
+            </ul>
+          </li>
+          <li>Interned at Elevance Health as a Projects & Operations Intern</li>
         </ul>
       </div>
     </div>
@@ -263,9 +309,12 @@
       <div class="year-box">2025</div>
       <div class="content-box">
         <ul>
-          <li>Studied abroad in Sevilla, Spain</li>
-          <li>Deepened Spanish and cultural awareness</li>
-          <li>Interned at Brown Advisory</li>
+          <li>Studied abroad in Sevilla, Spain
+            <ul>
+              <li>Deepened Spanish and cultural awareness</li>
+            </ul>
+          </li>
+          <li>Interned at Brown Advisory as a Summer Analyst</li>
         </ul>
       </div>
     </div>
@@ -275,8 +324,8 @@
       <div class="year-box">2026</div>
       <div class="content-box">
         <ul>
-          <li>Accepted into Heidelberg University’s Summer School</li>
-          <li>Preparing to study German language and culture</li>
+          <li>MCed Junior Achievement's 75th Anniversary Celebration</li>
+          <li>Graduating from Babson College with Cum Laude honors</li>
         </ul>
       </div>
     </div>

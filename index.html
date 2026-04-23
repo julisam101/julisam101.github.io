@@ -58,8 +58,11 @@
     nav {
       display: flex;
       align-items: center;
-      gap: 24px;
+      justify-content: space-evenly;
+      gap: 12px;
       flex-wrap: wrap;
+      flex: 1;
+      margin-left: 28px;
     }
 
     nav a {
@@ -74,7 +77,13 @@
       }
 
       nav {
+        justify-content: center;
         gap: 14px;
+        margin-left: 0;
+      }
+
+      section {
+        padding: 32px 20px;
       }
     }
 
@@ -108,14 +117,14 @@
 
     /* HERO */
     .hero {
-      min-height: 45vh;
+      min-height: 34vh;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       text-align: center;
       padding-top: 120px;
-      padding-bottom: 10px;
+      padding-bottom: 0;
     }
 
     .hero h1 {
@@ -129,6 +138,14 @@
       font-size: 20px;
       color: var(--text-muted);
       margin: 0;
+    }
+
+    #about {
+      margin-top: -50px;
+    }
+
+    #interests {
+      margin-top: -50px;
     }
 
     /* CARDS */
@@ -268,11 +285,12 @@
   <header>
     <div class="logo">JM</div>
     <nav>
-      <a href="#about">About</a>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
       <a href="journey.html">Journey</a>
-      <a href="#professional">Professional</a>
+      <a href="professional.html">Professional</a>
       <a href="projects.html">Projects</a>
-      <a href="#contact">Contact</a>
+      <a href="contact.html">Contact</a>
     </nav>
   </header>
 
@@ -296,50 +314,15 @@
     </p>
   </section>
 
-  <!-- PROFESSIONAL -->
-  <section id="professional" class="fade">
-    <h2>Professional</h2>
-
-    <div class="cards">
-      <a href="Julissa.Morales.Resume.pdf" target="_blank" class="card">
-        View Resume (PDF)
-        <span>Experience & education</span>
-      </a>
-
-      <a href="https://www.linkedin.com/in/julissamorales" target="_blank" class="card">
-        LinkedIn Profile ↗
-        <span>Career & professional updates</span>
-      </a>
-    </div>
-
-    <h3>Featured Articles & Media</h3>
-
-    <div class="cards">
-      <a href="https://annualreport.squashbusters.org/profile/natalie-and-julissa/" target="_blank" class="card">
-        SquashBusters Annual Report
-        <span>SquashBusters Family Feature</span>
-      </a>
-
-      <a href="https://www.nbcboston.com/video/entertainment/hub-today/celebrating-75-years-of-junior-achievement/3811369/" target="_blank" class="card">
-        NBC Boston – Junior Achievement
-        <span>Celebrating 75 Years of Junior Achievement</span>
-      </a>
-
-      <a href="https://www.youtube.com/watch?v=y22Qj8P0-SE" target="_blank" class="card">
-        Telemundo - Junior Achievement
-        <span>Celebrando los 75 años de Junior Achievement.</span>
-      </a>
-    </div>
-  </section>
-
-
-
   <!-- INTERESTS -->
   <section id="interests" class="fade">
     <h2>Interests</h2>
     <div class="tags">
       <div class="tag">Squash</div>
       <div class="tag">Coding</div>
+      <div class="tag">Reading</div>
+      <div class="tag">Painting</div>
+      <div class="tag">Hiking</div>
     </div>
   </section>
 
