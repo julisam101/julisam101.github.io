@@ -139,10 +139,10 @@
       background: var(--surface);
       backdrop-filter: blur(10px);
       border: 1px solid var(--surface-border);
-      padding: 4px 6px;
+      padding: 6px 8px;
       border-radius: 10px;
-      font-size: 12px;
-      font-weight: 600;
+      font-size: 16px;
+      font-weight: 700;
       cursor: pointer;
       transition: 0.3s ease;
       margin: 0 auto;
@@ -167,26 +167,25 @@
     }
 
     .content-box li {
-      margin-bottom: 6px;
+      margin-bottom: 0;
       font-size: 15px;
     }
 
     .content-display {
-      flex: 1;
+      flex: none;
       background: var(--surface);
       border: 1px solid var(--surface-border);
       border-radius: 16px;
-      padding: 10px 12px;
+      padding: 14px 16px;
       box-shadow: var(--shadow-soft);
       backdrop-filter: blur(10px);
       margin-top: 6px;
-      min-height: 210px;
-      display: flex;
+      display: none;
       flex-direction: column;
       justify-content: flex-start;
       text-align: left;
       overflow-y: auto;
-      max-height: 340px;
+      max-height: calc(100vh - 220px);
     }
 
     .content-display h2 {
@@ -203,8 +202,8 @@
 
     .content-display li {
       margin-bottom: 4px;
-      font-size: 13px;
-      line-height: 1.3;
+      font-size: 14px;
+      line-height: 1.5;
     }
 
     a {
@@ -231,7 +230,7 @@
 
     .preview-frame {
       width: 100%;
-      height: 200px;
+      height: 420px;
       border: 1px solid var(--surface-border);
       border-radius: 10px;
       background: #f2f7fb;
@@ -353,6 +352,11 @@
           <li>Graduated Notre Dame Cristo Rey as Salutatorian</li>
           <li>Began my journey at Babson College as a Diversity Leadership Scholar</li>
           <li>Joined Semillas Society as Career Coordinator</li>
+          <li>Featured in the Notre Dame Impact Report
+            <div class="project-preview">
+              <iframe class="preview-frame" src="20212022ImpactReport.pdf#page=1" title="JA 2021-2022 Impact Report front cover"></iframe>
+            </div>
+          </li>
         </ul>
       </div>
     </div>
@@ -444,12 +448,10 @@
       const contentHTML = contentBox.innerHTML;
       
       // Display in content-display div
+      contentDisplay.style.display = "flex";
       contentDisplay.innerHTML = `<h2>${year}</h2>${contentHTML}`;
     });
   });
-
-  // Auto-click the first item on page load
-  items[0].querySelector(".year-box").click();
 </script>
 
 </body>
