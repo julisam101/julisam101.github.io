@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>My Journey – Julissa Morales</title>
 
   <!-- Playfair Display -->
@@ -30,7 +31,8 @@
       font-family: "Helvetica Neue", Arial, sans-serif;
       background: linear-gradient(135deg, var(--bg-start), var(--bg-end));
       color: var(--text-primary);
-      overflow: hidden;
+      overflow-x: hidden;
+      overflow-y: auto;
     }
 
     header {
@@ -65,6 +67,12 @@
     nav a {
       text-decoration: none;
       color: inherit;
+      border-bottom: none;
+    }
+
+    nav a:hover {
+      color: inherit;
+      border-bottom: none;
     }
 
     main {
@@ -280,6 +288,111 @@
       border-bottom-color: var(--accent-light);
     }
 
+    /* NAV responsive */
+    nav a {
+      text-decoration: none;
+      color: inherit;
+      font-weight: 500;
+      white-space: nowrap;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      header {
+        padding: 14px 20px;
+      }
+
+      nav {
+        justify-content: center;
+        gap: 10px;
+        margin-left: 0;
+      }
+
+      body {
+        overflow: auto;
+      }
+
+      main {
+        padding-top: 0;
+        padding-left: 16px;
+        padding-right: 16px;
+        padding-bottom: 40px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-height: 100vh;
+      }
+
+      h1 {
+        font-size: 28px;
+        margin-top: 90px;
+      }
+
+      .timeline-wrapper {
+        position: static;
+        width: 100%;
+        height: auto;
+        border-right: none;
+        border-bottom: 1px solid var(--surface-border);
+        flex-direction: row;
+        overflow-x: auto;
+        overflow-y: hidden;
+        justify-content: flex-start;
+        padding: 10px 6px;
+        gap: 8px;
+        flex-wrap: nowrap;
+        scrollbar-width: none;
+        margin-bottom: 16px;
+      }
+
+      .timeline-wrapper::-webkit-scrollbar {
+        display: none;
+      }
+
+      .timeline-item {
+        min-width: 72px;
+        flex-shrink: 0;
+      }
+
+      .year-box {
+        width: 100%;
+        font-size: 14px;
+        padding: 6px 6px;
+      }
+
+      .content-display {
+        position: static;
+        max-height: none;
+        width: 100%;
+        overflow-y: visible;
+      }
+
+      .preview-frame {
+        height: 260px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 24px;
+      }
+
+      .subtitle {
+        font-size: 13px;
+      }
+
+      .content-display h2 {
+        font-size: 17px;
+      }
+
+      .content-display li {
+        font-size: 13px;
+      }
+
+      .preview-frame {
+        height: 200px;
+      }
+    }
 
   </style>
 </head>

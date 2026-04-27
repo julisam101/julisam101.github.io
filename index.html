@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Julissa Morales</title>
   <link rel="icon" type="image/png" href="logo4.png">
 
@@ -16,6 +17,10 @@
       --surface-border: #dceefb;
       --shadow-soft: 0 10px 25px rgba(16, 42, 67, 0.1);
       --accent: #2f6fa3;
+    }
+
+    * {
+      box-sizing: border-box;
     }
 
     html {
@@ -85,6 +90,62 @@
       section {
         padding: 32px 20px;
       }
+
+      .hero {
+        gap: 16px;
+      }
+
+      .hero h1 {
+        font-size: 36px;
+      }
+
+      .hero p {
+        font-size: 17px;
+      }
+
+      .hero-headshot {
+        width: 220px;
+        height: auto;
+      }
+
+      h2 {
+        font-size: 22px;
+      }
+
+      h3 {
+        font-size: 18px;
+      }
+
+      p {
+        font-size: 16px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero {
+        flex-direction: row;
+        align-items: center;
+        gap: 12px;
+      }
+
+      .hero-headshot {
+        width: 170px;
+        height: auto;
+        flex: 0 0 170px;
+        max-width: 100%;
+      }
+
+      .hero h1 {
+        font-size: 28px;
+      }
+
+      .hero p {
+        font-size: 15px;
+      }
+
+      .card {
+        min-width: 100%;
+      }
     }
 
     /* SECTIONS */
@@ -119,12 +180,34 @@
     .hero {
       min-height: 34vh;
       display: flex;
-      flex-direction: column;
-      justify-content: center;
+      justify-content: flex-start;
       align-items: center;
-      text-align: center;
+      text-align: left;
+      gap: 34px;
       padding-top: 120px;
       padding-bottom: 0;
+    }
+
+    .hero-content {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      flex: 1;
+      max-width: 700px;
+    }
+
+    .hero-headshot {
+      width: 420px;
+      height: auto;
+      flex: 0 0 420px;
+      max-width: 100%;
+      display: block;
+      border-radius: 14px;
+      image-rendering: auto;
+      image-rendering: -webkit-optimize-contrast;
+      border: 3px solid var(--surface-border);
+      box-shadow: var(--shadow-soft);
+      margin-bottom: 0;
     }
 
     .hero h1 {
@@ -134,14 +217,25 @@
       margin-bottom: 6px;
     }
 
-    .hero p {
+    .hero-subtitle {
       font-size: 20px;
       color: var(--text-muted);
       margin: 0;
+      max-width: 100%;
     }
 
-    #about {
-      margin-top: -50px;
+    .hero-welcome {
+      margin: 4px 0 0;
+      font-size: 32px;
+      border-bottom: none;
+    }
+
+    .hero-about-text p {
+      font-size: 17px;
+      line-height: 1.6;
+      color: var(--text-primary);
+      margin: 10px 0 0;
+      max-width: 100%;
     }
 
     #interests {
@@ -269,12 +363,101 @@
     .fade {
       opacity: 0;
       transform: translateY(25px);
-      transition: all 0.8s ease;
+      transition: opacity 0.8s ease, transform 0.8s ease;
     }
 
     .fade.show {
       opacity: 1;
       transform: translateY(0);
+    }
+
+    /* Final responsive overrides */
+    @media (max-width: 900px) {
+      header {
+        padding: 14px 20px;
+      }
+
+      nav {
+        justify-content: center;
+        gap: 14px;
+        margin-left: 0;
+      }
+
+      section {
+        padding: 32px 20px;
+      }
+
+      .hero {
+        gap: 18px;
+      }
+
+      .hero-headshot {
+        width: 280px;
+        height: auto;
+        flex: 0 0 280px;
+      }
+
+      .hero h1 {
+        font-size: 42px;
+      }
+
+      .hero-subtitle {
+        font-size: 17px;
+      }
+
+      .hero-welcome {
+        font-size: 26px;
+      }
+
+      .hero-about-text p {
+        font-size: 16px;
+      }
+
+      h2 {
+        font-size: 22px;
+      }
+
+      h3 {
+        font-size: 18px;
+      }
+
+      p {
+        font-size: 16px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .hero {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 14px;
+      }
+
+      .hero-headshot {
+        width: 220px;
+          height: auto;
+        flex: 0 0 220px;
+      }
+
+      .hero h1 {
+        font-size: 30px;
+      }
+
+      .hero-subtitle {
+        font-size: 15px;
+      }
+
+      .hero-welcome {
+        font-size: 22px;
+      }
+
+      .hero-about-text p {
+        font-size: 15px;
+      }
+
+      .card {
+        min-width: 100%;
+      }
     }
   </style>
 </head>
@@ -295,23 +478,18 @@
   </header>
 
   <!-- HERO -->
-  <section class="hero fade">
-    <h1>Julissa Morales</h1>
-    <p>First-Generation College Student & Diversity Leadership Scholar at Babson College</p>
-  </section>
-
-  <!-- ABOUT -->
-  <section id="about" class="fade">
-    <h2>Welcome to My Page!</h2>
-    <p>
-      I'm Julissa Morales, a first-generation senior at Babson College, passionate about learning, leadership, and community. Whether you're here to explore my professional journey, dive into media features, or discover the hobbies that keep me grounded, I'm glad you stopped by.
-    </p>
-    <p>
-      As you explore further, this site also highlights the professional side of my journey — the roles, projects, and leadership experiences that have shaped my academic and career interests. It reflects the work I’ve contributed to, the opportunities that have challenged me, and the direction I’m continuing to grow in.
-    </p>
-    <p>
-      I created this website to share, connect, and inspire anyone navigating their own path, and I hope something here encourages you to keep growing, exploring, and believing in what’s possible.
-    </p>
+  <section class="hero">
+    <img class="hero-headshot" src="Julissa Morales Headshot.jpg" alt="Julissa Morales" />
+    <div class="hero-content">
+      <h1>Julissa Morales</h1>
+      <p class="hero-subtitle">First-Generation College Student & Diversity Leadership Scholar at Babson College</p>
+      <h2 class="hero-welcome">Welcome to My Page!</h2>
+      <div class="hero-about-text">
+        <p>I'm Julissa Morales, a first-generation senior at Babson College, passionate about learning, leadership, and community. Whether you're here to explore my professional journey, dive into media features, or discover the hobbies that keep me grounded, I'm glad you stopped by.</p>
+        <p>As you explore further, this site also highlights the professional side of my journey - the roles, projects, and leadership experiences that have shaped my academic and career interests. It reflects the work I've contributed to, the opportunities that have challenged me, and the direction I'm continuing to grow in.</p>
+        <p>I created this website to share, connect, and inspire anyone navigating their own path, and I hope something here encourages you to keep growing, exploring, and believing in what's possible.</p>
+      </div>
+    </div>
   </section>
 
   <!-- INTERESTS -->
